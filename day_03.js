@@ -7,7 +7,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 // Palindrome
-let testPalindromeString = "Kasur nababan rusak";
+let testPalindromeString = "madam";
 let arrayString = testPalindromeString.split(""); // Turn string into array
 let isPalindrome = true; // default check for palindrome
 let lastChar = arrayString.length - 1; // Untuk mendapatkan character dari belakang
@@ -15,7 +15,6 @@ let lastChar = arrayString.length - 1; // Untuk mendapatkan character dari belak
 for (let i = 0; i < arrayString.length; i++) {
   if (arrayString[i].toLowerCase() === arrayString[lastChar].toLowerCase()) {
     // turn the value to lower case, so it can be compare
-    isPalindrome = true;
   } else {
     isPalindrome = false;
     //console.log(arrayString[i], arrayString[lastChar]);
@@ -30,7 +29,25 @@ if (isPalindrome) {
   console.log(`${testPalindromeString} is not a palindrome.`);
 }
 
+// PALINDROME SOLUTION KAK BAGAS
+let targetStr = "madam"; // Dengan String kita bisa mengambil index <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+let isPalindrome_2 = true;
+let startChar = 0;
+let endChar = targetStr.length - 1;
+
+while (startChar < endChar) {
+  if (targetStr[startChar] !== targetStr[endChar]) {
+    isPalindrome_2 = false;
+    break;
+  } else {
+    startChar++;
+    endChar--;
+  }
+}
+
+console.log(isPalindrome ? "palindrome" : "not palindrome");
 //convert centimeter to kilometer.
+
 let centimeterValue = 10000;
 let meter = centimeterValue / 100;
 
@@ -80,9 +97,25 @@ for (let i = 0; i < stringCapitalizedArray.length; i++) {
 
 console.log(stringCapitalizedArray.join(" "));
 
+// SOLUTION KAK BAGAS --> CAPITALIZE THE FIRST LETTER
+let targetCapitalize = "hello world";
+let resultCapitalize = "";
+
+for (let i = 0; i < targetCapitalize.length; i++) {
+  console.log(i - 1, targetCapitalize[i - 1]);
+  console.log(i, targetCapitalize[i]);
+
+  if (i === 0 || targetCapitalize[i - 1] === " ") {
+    // check the previous character using i - 1, apakah terdapat spasi atau tidak. kalau ada makan char pada index akan diubah jadi uppercase
+    resultCapitalize += targetCapitalize[i].toUpperCase();
+  } else {
+    resultCapitalize += targetCapitalize[i];
+  }
+}
+
 // swap the case of each character from string
 
-const swapTestString = "HelLLo WoRLD";
+const swapTestString = "HELLO world";
 const swapTestStringArray = swapTestString.split("");
 
 // Looping inside string array, and do comparison whether the string of the current index is have uppercase. If yes, make the value to lowercase if not make it to uppercase
@@ -95,14 +128,30 @@ for (let i = 0; i < swapTestStringArray.length; i++) {
 }
 console.log(swapTestStringArray.join(""));
 
-// FIND LARGEST NUMBER
+// SOLUTION KAK BAGAS : SWAP THE CASE OF EACH CHARACTER FROM STRING
+let targetConvert = "HELLO world";
+let resultConvert = "";
+
+for (let i = 0; i < targetConvert.length; i++) {
+  if (targetConvert[i] >= "a" && targetConvert[i] <= "z") {
+    // SETIAP LETTER ITU MEMILIKI NILAI ATAU BOBOT --> ASCII
+    resultConvert += targetConvert[i].toUpperCase();
+  } else if (targetConvert[i] >= "A" && targetConvert[i] <= "Z") {
+    resultConvert += targetConvert[i].toLowerCase();
+  } else {
+    resultConvert += targetConvert[i];
+  }
+}
+console.log(resultConvert);
+
+// Find Largest Number
 
 let testingNumber01 = 25;
 let testingNumber02 = 100;
 let largestNumber = Math.max(testingNumber01, testingNumber02);
 console.log(largestNumber);
 
-// TYPE DATA CHECK
+// Type Data Check
 
 let inputTypeCheck = true;
 
@@ -114,7 +163,9 @@ if (typeof inputTypeCheck == "string") {
   console.log("3");
 }
 
-// CHANGE EVERY LETTER a into *
+// Change every letter a into *
 let testStringChangeLetter = "farel";
 let changeString = testStringChangeLetter.replace(/a/gi, "*");
 console.log(changeString);
+
+console.log("B" > "A");
