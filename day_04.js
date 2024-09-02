@@ -111,8 +111,46 @@ function arrayOddNumber(number) {
 
 console.log(arrayOddNumber(10));
 
+function arrayOddNumber2(arrayNumber) {
+  const result = [];
+
+  for (let i = 0; i < arrayNumber.length; i++) {
+    if (arrayNumber[i] % 2 == 0) {
+      console.log(result.length);
+      result[result.length] = arrayNumber[i];
+    } else {
+      continue;
+    }
+  }
+  return result;
+}
+
+let arrayNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(arrayOddNumber2(arrayNumber));
+
 function splitWord(word) {
   return word.split(" ");
 }
 
 console.log(splitWord("Farel Deksano"));
+
+// KAK BAGAS SOLUTON SPLIT WORD
+function splitWord2(word) {
+  let result = [];
+  let tempWord = "";
+
+  console.log(word.length);
+
+  for (let i = 0; i <= word.length; i++) {
+    console.log(i);
+    if (word[i] === " " || i === word.length) {
+      result[result.length] = tempWord;
+      tempWord = "";
+    } else {
+      tempWord += word[i];
+    }
+  }
+  return result;
+}
+
+console.log(splitWord2("Farel Deksano"));
