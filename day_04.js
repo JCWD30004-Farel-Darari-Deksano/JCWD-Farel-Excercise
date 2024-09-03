@@ -137,13 +137,14 @@ console.log(splitWord("Farel Deksano"));
 // KAK BAGAS SOLUTON SPLIT WORD
 function splitWord2(word) {
   let result = [];
+
   let tempWord = "";
 
-  console.log(word.length);
+  console.log(result.length);
 
   for (let i = 0; i <= word.length; i++) {
-    console.log(i);
     if (word[i] === " " || i === word.length) {
+      console.log(result.length);
       result[result.length] = tempWord;
       tempWord = "";
     } else {
